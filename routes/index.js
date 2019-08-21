@@ -16,7 +16,6 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/seckill', async (ctx, next) => {
-  console.log('count=', global.count++);
   let producer = ctx.producer || await require('amqplib').connect('amqp://localhost');
   let fn = async function (optionalClient) {
     let client;
